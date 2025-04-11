@@ -5,7 +5,6 @@ import dts from "rollup-plugin-dts";
 import fs from "fs";
 import path from "path";
 
-// Зчитування package.json
 const packageJson = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "./package.json"), "utf-8")
 );
@@ -31,16 +30,18 @@ export default [
       typescript({
         tsconfig: "./tsconfig.json",
         declaration: true,
-        declarationDir: "dist",
+        declarationDir: "dist/types",
+        include: ["src/**/*"],
       }),
     ],
   },
+  
   {
-    input: "dist/index.d.ts",
+    input: "dist/types/index.d.ts",
     output: {
-      file: "dist/index.d.ts",
+      file: "dist/types/index.d.ts",
       format: "es",
     },
-    plugins: [dts()],
+    plugins: [dts()], 
   },
 ];
