@@ -1,6 +1,6 @@
 {
-  "name": "flexible-error-boundary",
-  "version": "1.0.3",
+  "name": "@colard/flexible-error-boundary",
+  "version": "1.0.5",
   "description": "A component for flexible error detection in components",
   "scripts": {
     "build": "rollup -c",
@@ -30,7 +30,6 @@
     "tslib": "^2.8.1"
   },
   "publishConfig": {
-    "name": "@Colard/flexible-error-boundary",
     "registry": "https://npm.pkg.github.com/Colard"
   }
 }
